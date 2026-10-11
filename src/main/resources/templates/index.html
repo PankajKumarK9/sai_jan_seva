@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${title}">Sai Jan Kalyan Seva Sansthan</title>
+    <meta name="description" content="Sai Jan Kalyan Seva Sansthan provides free PMKVY computer skill training for students and youth in Kasganj, UP.">
+    <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<div th:replace="~{fragments :: header}"></div>
+<main>
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <span class="eyebrow">कंप्यूटर शिक्षा केंद्र</span>
+                <h1>कंप्यूटर सीखो, <span>आगे बढ़ो</span></h1>
+                <p class="lead">Learn Computer Skills, Move Forward</p>
+                <p>Sai Jan Kalyan Seva Sansthan provides quality, affordable and PMKVY aligned computer education to students and youth in Kasganj.</p>
+                <div class="actions">
+                    <a class="btn btn-primary" href="/contact">Enroll Now</a>
+                    <a class="btn btn-secondary" href="/courses">View Courses</a>
+                </div>
+                <div class="pills">
+                    <span>Free Demo Class</span><span>Hindi Medium</span><span>Certificate Course</span><span>Job Assistance</span>
+                </div>
+            </div>
+            <div class="visual hero-visual">
+                <div class="screen-card">
+                    <div class="screen-bar"></div>
+                    <div class="screen-body">
+                        <strong>PMKVY Skill Training</strong>
+                        <small>Hands-on computer lab practice</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container stat-grid">
+            <div><strong>500+</strong><span>Students Trained</span></div>
+            <div><strong>10+</strong><span>Courses Offered</span></div>
+            <div><strong>95%</strong><span>Placement Support</span></div>
+            <div><strong>5+</strong><span>Years of Excellence</span></div>
+        </div>
+    </section>
+
+    <section class="admission-strip">
+        <div class="container admission-grid">
+            <div>
+                <span class="eyebrow">Admissions Open</span>
+                <h2>Free PMKVY batches are open for enrollment</h2>
+                <p>Bring Aadhaar card, recent photo and education details for registration. Seats are limited and batch timing is assigned after counseling.</p>
+            </div>
+            <div class="admission-card">
+                <strong>Documents Required</strong>
+                <ul>
+                    <li>Aadhaar card copy</li>
+                    <li>Passport size photo</li>
+                    <li>Mobile number</li>
+                    <li>Basic education details</li>
+                </ul>
+                <a class="btn btn-primary" href="/contact">Ask for Admission</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">हमारे कोर्स</span>
+                <h2>Our Computer Courses</h2>
+                <p>Industry-relevant practical training with recognized certificates and local job guidance.</p>
+            </div>
+            <div class="course-grid">
+                <article class="course-card" th:each="course : ${courses}">
+                    <span class="badge" th:text="${course.fee()}">Free</span>
+                    <h3 th:text="${course.title()}">Course</h3>
+                    <p class="accent" th:text="${course.subtitle()}">PMKVY</p>
+                    <p th:text="${course.description()}">Description</p>
+                    <div class="card-foot">
+                        <span th:text="${course.duration()}">3 Months</span>
+                        <a href="/contact">Enroll</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section soft">
+        <div class="container split">
+            <div class="visual lab-visual"></div>
+            <div>
+                <span class="eyebrow">हमारे बारे में</span>
+                <h2>About Sai Jan Kalyan Seva Sansthan</h2>
+                <p>Sai Jan Kalyan Seva Sansthan is a community-driven computer education center dedicated to empowering students and youth with practical digital skills.</p>
+                <ul class="check-list">
+                    <li>Experienced and certified trainers</li>
+                    <li>Hindi and English medium classes</li>
+                    <li>Affordable fee structure</li>
+                    <li>Government recognized certificates</li>
+                    <li>Practical hands-on training</li>
+                    <li>Flexible batch timings</li>
+                </ul>
+                <a class="btn btn-primary" href="/about">Know More About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container cta-inner">
+            <div>
+                <p>आज ही शुरू करें</p>
+                <h2>Ready to Start Your Computer Journey?</h2>
+                <span>Free demo class available. Limited seats.</span>
+            </div>
+            <div class="actions">
+                <a class="btn btn-light" href="/contact">Enroll Now</a>
+                <a class="btn btn-outline-light" href="tel:+918077324882">Call: +91 80773 24882</a>
+            </div>
+        </div>
+    </section>
+</main>
+<div th:replace="~{fragments :: footer}"></div>
+<div th:replace="~{fragments :: floatingActions}"></div>
+<script src="/js/site.js"></script>
+</body>
+</html>

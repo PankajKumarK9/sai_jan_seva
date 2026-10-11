@@ -1,0 +1,72 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<header th:fragment="header" class="site-header">
+    <div class="container header-inner">
+        <a class="brand" href="/">
+            <img src="/assets/uploads/airo-logo-shimmer-square.svg" alt="Sai Jan Kalyan Seva Sansthan logo">
+            <span>
+                <strong>Sai Jan Kalyan<br>Seva Sansthan</strong>
+                <small>PMKVY Computer Training</small>
+            </span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Toggle menu" data-menu-toggle>Menu</button>
+        <nav class="nav" data-nav>
+            <a th:classappend="${page == 'home'} ? 'active'" href="/">Home</a>
+            <a th:classappend="${page == 'courses'} ? 'active'" href="/courses">Courses</a>
+            <a th:classappend="${page == 'about'} ? 'active'" href="/about">About</a>
+            <a th:classappend="${page == 'gallery'} ? 'active'" href="/gallery">Gallery</a>
+            <a th:classappend="${page == 'contact'} ? 'active'" href="/contact">Contact</a>
+            <a class="btn btn-primary" href="/contact">Enroll Now</a>
+        </nav>
+    </div>
+</header>
+
+<footer th:fragment="footer" class="site-footer">
+    <div class="container footer-grid">
+        <div>
+            <a class="brand brand-footer" href="/">
+                <img src="/assets/uploads/airo-logo-shimmer-square.svg" alt="Sai Jan Kalyan Seva Sansthan">
+                <span>
+                    <strong>Sai Jan Kalyan<br>Seva Sansthan</strong>
+                    <small>PMKVY Computer Training</small>
+                </span>
+            </a>
+            <p>कंप्यूटर शिक्षा के माध्यम से युवाओं को सशक्त बनाना।</p>
+            <p class="muted">Empowering youth through computer education.</p>
+        </div>
+        <div>
+            <h3>Quick Links</h3>
+            <a href="/">Home</a>
+            <a href="/courses">Courses</a>
+            <a href="/about">About Us</a>
+            <a href="/gallery">Gallery</a>
+            <a href="/contact">Contact</a>
+        </div>
+        <div>
+            <h3>Our Courses</h3>
+            <a href="/courses">Hardware & Networking</a>
+            <a href="/courses">Data Entry Operator</a>
+            <a href="/courses">Domestic Data Entry</a>
+            <a href="/courses">CRM Domestic Voice</a>
+            <a href="/courses">IT Support Technician</a>
+            <a href="/courses">Cyber Security Awareness</a>
+        </div>
+        <div>
+            <h3>Contact Us</h3>
+            <p>Shiyam Vihar Colony,<br>Dhantoriya Road, Kasganj,<br>Uttar Pradesh - 207123</p>
+            <p><a href="tel:+918077324882">+91 80773 24882</a></p>
+            <p><a href="mailto:sjkss2016.org@gmail.com">sjkss2016.org@gmail.com</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">© <span th:text="${year}">2026</span> Sai Jan Kalyan Seva Sansthan. All rights reserved.</div>
+    </div>
+</footer>
+
+<div th:fragment="floatingActions" class="floating-actions" aria-label="Quick contact actions">
+    <a class="floating-call" href="tel:+918077324882">Call</a>
+    <a class="floating-whatsapp" href="https://wa.me/918077324882?text=Namaste%2C%20mujhe%20course%20admission%20ke%20bare%20me%20jankari%20chahiye" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+</body>
+</html>

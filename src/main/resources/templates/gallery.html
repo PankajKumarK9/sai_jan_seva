@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${title}">Gallery</title>
+    <meta name="description" content="Gallery of Sai Jan Kalyan Seva Sansthan classes, students and activities.">
+    <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<div th:replace="~{fragments :: header}"></div>
+<main>
+    <section class="page-hero">
+        <div class="container narrow">
+            <span class="eyebrow">गैलरी</span>
+            <h1>Our Gallery</h1>
+            <p>A glimpse into life at Sai Jan Kalyan Seva Sansthan: classes, students, lab practice and achievement moments.</p>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container gallery-grid">
+            <figure class="gallery-item large"><div class="gallery-art art-1"></div><figcaption>Computer Lab Sessions</figcaption></figure>
+            <figure class="gallery-item"><div class="gallery-art art-2"></div><figcaption>Digital Literacy Training</figcaption></figure>
+            <figure class="gallery-item"><div class="gallery-art art-3"></div><figcaption>One-on-One Guidance</figcaption></figure>
+            <figure class="gallery-item"><div class="gallery-art art-4"></div><figcaption>Certificate Distribution</figcaption></figure>
+            <figure class="gallery-item"><div class="gallery-art art-5"></div><figcaption>Our Students</figcaption></figure>
+            <figure class="gallery-item large"><div class="gallery-art art-6"></div><figcaption>Our Computer Lab</figcaption></figure>
+            <figure class="gallery-item"><div class="gallery-art art-7"></div><figcaption>Classroom Training</figcaption></figure>
+            <figure class="gallery-item"><div class="gallery-art art-8"></div><figcaption>Hands-on Learning</figcaption></figure>
+        </div>
+    </section>
+    <section class="cta">
+        <div class="container cta-inner">
+            <div>
+                <h2>Want to be part of our story?</h2>
+                <span>Join Sai Jan Kalyan Seva Sansthan and start your computer learning journey today.</span>
+            </div>
+            <a class="btn btn-light" href="/contact">Enroll Now</a>
+        </div>
+    </section>
+</main>
+<div th:replace="~{fragments :: footer}"></div>
+<div th:replace="~{fragments :: floatingActions}"></div>
+<script src="/js/site.js"></script>
+</body>
+</html>

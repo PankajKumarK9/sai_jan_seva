@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${title}">Contact</title>
+    <meta name="description" content="Contact Sai Jan Kalyan Seva Sansthan in Kasganj, UP.">
+    <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<div th:replace="~{fragments :: header}"></div>
+<main>
+    <section class="page-hero">
+        <div class="container narrow">
+            <span class="eyebrow">संपर्क करें</span>
+            <h1>Contact Us</h1>
+            <p>Have questions about our courses? Want to enroll? Reach out to us anytime.</p>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container contact-grid">
+            <div>
+                <h2>Get In Touch</h2>
+                <div class="info-card">
+                    <strong>Address / पता</strong>
+                    <p>Shiyam Vihar Colony,<br>Dhantoriya Road, Kasganj,<br>Uttar Pradesh - 207123</p>
+                    <a href="https://maps.google.com/?q=Kasganj+Uttar+Pradesh+207123" target="_blank" rel="noopener">View on Map</a>
+                </div>
+                <div class="info-card">
+                    <strong>Phone / फोन</strong>
+                    <p><a href="tel:+918077324882">+91 80773 24882</a></p>
+                </div>
+                <div class="info-card">
+                    <strong>Email / ईमेल</strong>
+                    <p><a href="mailto:sjkss2016.org@gmail.com">sjkss2016.org@gmail.com</a></p>
+                </div>
+                <div class="info-card">
+                    <strong>Timings / समय</strong>
+                    <p>Monday - Saturday<br>8:00 AM - 8:00 PM<br>Sunday: Closed</p>
+                </div>
+                <iframe class="map" title="Sai Jan Kalyan Seva Sansthan Location" src="https://maps.google.com/maps?q=Kasganj,Uttar+Pradesh,207123,India&z=13&output=embed" loading="lazy"></iframe>
+            </div>
+            <div>
+                <h2>Send an Inquiry / प्रवेश के लिए संपर्क करें</h2>
+                <div class="success" th:if="${success}">
+                    <strong>Message Sent!</strong>
+                    <p>Thank you for reaching out. We will contact you within 24 hours.</p>
+                </div>
+                <form class="form" th:action="@{/contact}" th:object="${inquiry}" method="post">
+                    <label>Full Name / पूरा नाम
+                        <input type="text" th:field="*{name}" required placeholder="Your full name">
+                        <small th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</small>
+                    </label>
+                    <label>Mobile Number / मोबाइल
+                        <input type="tel" th:field="*{phone}" required placeholder="+91 XXXXX XXXXX">
+                        <small th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Phone error</small>
+                    </label>
+                    <label>Email Address / ईमेल
+                        <input type="email" th:field="*{email}" placeholder="your@email.com">
+                        <small th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</small>
+                    </label>
+                    <label>Course Interested In / कोर्स
+                        <select th:field="*{course}" required>
+                            <option value="">Select a course</option>
+                            <option th:each="course : ${courses}" th:value="${course.title()}" th:text="${course.title()}">Course</option>
+                            <option value="Not sure - need guidance">Not sure - need guidance</option>
+                        </select>
+                        <small th:if="${#fields.hasErrors('course')}" th:errors="*{course}">Course error</small>
+                    </label>
+                    <label>Message / संदेश
+                        <textarea rows="4" th:field="*{message}" placeholder="Any questions or additional information..."></textarea>
+                    </label>
+                    <button class="btn btn-primary" type="submit">Send Inquiry / भेजें</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+<div th:replace="~{fragments :: footer}"></div>
+<div th:replace="~{fragments :: floatingActions}"></div>
+<script src="/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${title}">Courses</title>
+    <meta name="description" content="Explore PMKVY computer courses at Sai Jan Kalyan Seva Sansthan Kasganj.">
+    <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<div th:replace="~{fragments :: header}"></div>
+<main>
+    <section class="page-hero dark">
+        <div class="container">
+            <span class="eyebrow">हमारे कोर्स</span>
+            <h1>Our Computer Courses</h1>
+            <p>PMKVY certified training, government-recognized certificates and job placement assistance. All courses are beginner friendly.</p>
+        </div>
+    </section>
+    <section class="section soft">
+        <div class="container course-grid">
+            <article class="course-card" th:each="course : ${courses}">
+                <span class="badge" th:text="${course.fee()}">Free</span>
+                <h2 th:text="${course.title()}">Course</h2>
+                <p class="accent" th:text="${course.subtitle()}">PMKVY</p>
+                <p th:text="${course.description()}">Description</p>
+                <ul class="mini-list">
+                    <li>Practical lab training</li>
+                    <li>Certificate after completion</li>
+                    <li>Career and interview guidance</li>
+                </ul>
+                <div class="card-foot">
+                    <span th:text="${course.duration()}">3 Months</span>
+                    <a href="/contact">Enroll</a>
+                </div>
+            </article>
+        </div>
+    </section>
+    <section class="cta">
+        <div class="container cta-inner">
+            <div>
+                <h2>Not sure which course to join?</h2>
+                <span>Attend a free demo class and our counselors will guide you.</span>
+            </div>
+            <a class="btn btn-light" href="/contact">Book Free Demo Class</a>
+        </div>
+    </section>
+</main>
+<div th:replace="~{fragments :: footer}"></div>
+<div th:replace="~{fragments :: floatingActions}"></div>
+<script src="/js/site.js"></script>
+</body>
+</html>

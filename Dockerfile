@@ -8,7 +8,7 @@ RUN mvn clean package -DskipTests
 # Runtime stage
 FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
-COPY --from=build /app/target/sai_jan_seva-*.jar app.jar
+COPY --from=build /app/target/*.jar app.jar
 
 # Expose default port
 EXPOSE 8080
